@@ -1,4 +1,7 @@
 <?php
+    
+    use app\Http\controllers;
+    use App\Http\controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -11,9 +14,19 @@
 |  
 */
 
+
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/users', [ UserController::class, 'index']);
+
+Route::get('/users/create', [ UserController::class, 'create']);
+
+Route::get('/users/{id}', [ UserController::class, 'show']);
+
+Route::get('/users', [ UserController::class, 'store']);
+
 
 Route::get('/saludo', function(){
     return "hola";
@@ -23,11 +36,11 @@ Route::get('/saludo/{nombre}', function($nombre){
     return "hola ".$nombre;
 });
 
-Route::get('/suma/{num1}/{num2}', function($num1,$num2){
+/*Route::get('/suma/{num1}/{num2}', function($num1,$num2){
     return $num1 + $num2;
 
-})->where(['num1' => '[0-9]+','num2'=>'[0-9]+']);
+})->where(['num1' => '[0-9]+','num2'=>'[0-9]+']);*/
 
-Route::get('/multi/{num1}/{num2}/{num3?}',function($num1,$num2,$num3 = 1){
+/*Route::get('/multi/{num1}/{num2}/{num3?}',function($num1,$num2,$num3 = 1){
     return $num1 * $num2 * $num3;
-});
+});*/
