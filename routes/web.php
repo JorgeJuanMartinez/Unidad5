@@ -19,6 +19,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/login', function(){
+    return view('Auth.login');
+})->name('login');
+
+Route::get('/home', function(){
+    return view('home');
+})->name('home');
+
+
 Route::get('/users', [ UserController::class, 'index']);
 
 Route::get('/users/create', [ UserController::class, 'create']);
