@@ -13,7 +13,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        echo "holis";
+        $users = User::find($id);
+        return view('users.index', compact('user'));
     }
 
     /**
@@ -47,7 +48,8 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        echo $id;
+        $users = User::find($id);
+        return view('users.update', compact('user')); 
     }
 
     /**

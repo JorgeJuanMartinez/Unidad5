@@ -27,6 +27,7 @@ Route::get('/home', function(){
     return view('home');
 })->name('home');
 
+Route:: middleware(['auth'])->group(function(){
 
 Route::get('/users', [ UserController::class, 'index']);
 
@@ -35,7 +36,7 @@ Route::get('/users/create', [ UserController::class, 'create']);
 Route::get('/users/{id}', [ UserController::class, 'show']);
 
 Route::get('/users', [ UserController::class, 'store']);
-
+});
 
 Route::get('/saludo', function(){
     return "hola";
