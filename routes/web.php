@@ -35,7 +35,9 @@ Route::get('/users/create', [ UserController::class, 'create']);
 
 Route::get('/users/{id}', [ UserController::class, 'show']);
 
-Route::get('/users', [ UserController::class, 'store']);
+Route::POST('/users', [ UserController::class, 'store']);
+
+Route::put('/users', [ UserController::class, 'update']);
 });
 
 Route::get('/saludo', function(){

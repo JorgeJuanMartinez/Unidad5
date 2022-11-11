@@ -7,9 +7,11 @@
     <title>Document</title>
 </head>
 <body>
-    <br>
-    </br>
-    
+   
+    <input type="hidden" nmae="id" value="{{ $user->id}}">
+    <form action="post" action= "{{url('/users') }}">
+    @csrf    
+    @method('PUT')
     <label>
         nombre
     </label>
@@ -19,6 +21,6 @@
         correo
     </label>
     <input type="email" value="{{ $user->email}}" name="email">
-
+    </form>
 </body>
 </html>
